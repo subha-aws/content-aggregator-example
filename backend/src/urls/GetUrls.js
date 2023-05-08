@@ -22,13 +22,16 @@ const getBlog = async (url) => {
     const response = await axios.get(url)
         var blogs=[];
          parser.parseString(response.data, function(err, result) {
-            var items = result.rss.channel[0].item
+            var items = result.rss.channel[0].filter(item => item.tags.includes('Healthcare') || item.tags.includes('Genomics') || item.tags.includes('genomics'));
+            ;
+           
+            console.log(items);
             for(var i=0; i<= items.length; i++){
-                    blogs.push(items[i].link[0])
+                    blogs.push(items[i].link[0]);
             }
          });
     } catch (error) {
-        console.error(error)
+        console.error(error);
     }
     return blogs;
           

@@ -21,12 +21,12 @@ Parameters:
   RSSFeed:
     Type: String
     Description: 'RSS feed to scan'
-    Default: 'https://aws.amazon.com/blogs/compute/feed'
+    Default: 'https://aws.amazon.com/blogs/industries/feed/'
 
   GitHubRepo:
     Type: String
     Description: Full URL of the GitHub Repository that holds your application eg. https://github.com/username/repo-name\
-    Default: ''
+    Default: 'https://github.com/subha-aws/content-aggregator-example'
 
   JSONFile:
     Type: String
